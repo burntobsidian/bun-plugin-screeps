@@ -1,11 +1,49 @@
 {
-  "name": "bun-plugin-screeps",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+	"name": "bun-plugin-screeps",
+	"version": "1.0.0",
+	"description": "Bun build plugin + CLI to upload JS/WASM bundles to the Screeps API",
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js",
+		"./plugin": "./dist/plugin.js",
+		"./helpers": "./dist/helpers.js",
+		"./cli": "./dist/cli.js",
+		"./package.json": "./package.json"
+	},
+	"bin": {
+		"screeps-upload": "./dist/cli.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "bun tsc",
+		"dev": "bun tsc --watch",
+		"prepublishOnly": "npm run build",
+		"test": "bun test"
+	},
+	"peerDependencies": {
+		"bun": ">=1.1.0"
+	},
+	"dependencies": {
+		"git-rev-sync": "^3.0.2",
+		"screeps-api": "^1.16.1",
+		"zod": "^3.25.69"
+	},
+	"engines": {
+		"bun": ">=1.1.0"
+	},
+	"keywords": [
+		"bun",
+		"plugin",
+		"screeps",
+		"bun-builder",
+		"game-ai"
+	],
+	"author": "burntobsidian <me@burntobsidian.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/burntobsidian/bun-plugin-screeps.git"
+	}
 }
