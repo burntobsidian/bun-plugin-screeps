@@ -9,7 +9,8 @@
 		"moduleResolution": "bundler",
 		"verbatimModuleSyntax": true,
 		"strict": true,
-		"esModuleInterop": false
+		"esModuleInterop": false,
+		"skipLibCheck": true
 	},
 	"include": ["src/**/*"]
 }
